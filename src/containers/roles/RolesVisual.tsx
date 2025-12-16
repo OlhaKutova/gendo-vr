@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import styles from './RolesSection.module.css';
 
@@ -35,16 +36,23 @@ export const RolesVisual = ({ currentRole, debouncedInput }: RolesVisualProps) =
     <div className={styles['roles-section__content-right']}>
       <div className={styles['roles-section__image-wrapper']}>
         <AnimatePresence mode="wait">
-          <motion.img
+          <motion.div
             key={currentRole.id}
-            src={currentRole.imageSrc}
-            alt={currentRole.headline}
-            className={styles['roles-section__image']}
+            className={styles['roles-section__image-container']}
             variants={imageVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
-          />
+          >
+            <Image
+              src={currentRole.imageSrc}
+              alt={currentRole.headline}
+              fill
+              priority
+              sizes="(max-width: 992px) 100vw, 600px"
+              className={styles['roles-section__image']}
+            />
+          </motion.div>
         </AnimatePresence>
 
         <motion.div
