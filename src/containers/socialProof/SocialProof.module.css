@@ -1,0 +1,77 @@
+.socialProof {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    padding: 6rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.socialProof__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4rem;
+}
+
+.socialProof__header {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.socialProof__headline {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+    .socialProof__headline {
+        font-size: 2.5rem;
+    }
+}
+
+.socialProof__body {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--color-black);
+}
+
+.socialProof__logoGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .socialProof__logoGrid {
+        gap: 5rem;
+    }
+}
+
+.socialProof__logoWrapper {
+    position: relative;
+    width: 140px;
+    height: 60px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.socialProof__logoWrapper:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: translateY(-2px);
+}
+
+.socialProof__logoImage {
+    object-fit: contain;
+}
